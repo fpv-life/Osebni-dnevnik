@@ -1,3 +1,40 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.extra{
+    height: 100vh;
+    background-color: white;
+    padding: 0 !important;
+}
+body{
+    background-color: #bbe1fa !important;
+}
+.btn-outline-success{
+    color: #007bff !important;
+    border-color: #007bff !important;
+    transition: 0.5s;
+}
+.btn-outline-success:hover{
+    transition: 0.5s;
+    color: white !important;
+    background-color: #007bff !important;
+}
+.custom{
+    border-radius: 15px !important;
+    background-color:  white !important;
+}
+.no-display{
+    display: none;
+}
+.custom-textarea{
+    resize: none;
+}
+.custom-tittle{
+    margin-top: 30px !important;
+    color: #007bff !important;
+}
+.custom-button{
+    margin-left: 50%;
+    margin-right: 50%;
+}

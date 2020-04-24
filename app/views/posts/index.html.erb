@@ -34,7 +34,11 @@
         <% end %>
       </div>
     </nav>
-
+    
+    <div class="container custom-content-button text-center">
+      <%= link_to "Add a new post", new_post_path, class: "btn btn-primary w-100" %>
+    </div>
+    
     <% @posts.each do |post| %>
       <% if current_user.email == post.user.email %>
         <div class="container custom-container">

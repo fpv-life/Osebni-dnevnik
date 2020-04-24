@@ -1,3 +1,6 @@
+<script>
+$('textarea.tinymce').html()
+</script>
 <div class="container">
   <%= form_with(model: post, local: true) do |form| %>
     <% if post.errors.any? %>
@@ -13,11 +16,12 @@
     <% end %>
 
     <div class="field">
-      <%= form.text_field :title, placeholder: "Naslov", class: "form-control w-50" %>
+      <%= form.text_field :title, placeholder: "Title", class: "form-control w-50" %>
     </div>
 
     <div class="field">
-      <%= form.text_area :body, rows: 20, placeholder: "Kaj novega?", class: "form-control custom-textarea" %>
+      <%= form.rich_text_area :content, placeholder: "What is new?" %>
+
     </div>
 
     <div class="field no-display">
@@ -25,8 +29,8 @@
       <%= form.date_select :date %>
     </div>
 
-    <div class="actions">
-      <%= form.submit "Objavi", class: "btn btn-primary custom-button text-center" %>
+    <div class="actions text-center">
+      <%= form.submit "Post", class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>

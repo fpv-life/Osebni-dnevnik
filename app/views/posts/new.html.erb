@@ -11,39 +11,38 @@
     $(".alert").fadeOut().empty();
   }
 </script>
-
 <% if user_signed_in? %>
   <div class="container extra">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-      <%= link_to "Dnevnik", posts_path, class: "navbar-brand text-primary" %>
+      <%= link_to "Journal", posts_path, class: "navbar-brand text-primary" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to "Home", posts_path, class: "nav-link text-primary" %>
+          </li>
           <li class="nav-item active">
-            <%= link_to "Domov", posts_path, class: "nav-link text-primary" %>
+            <%= link_to "Add a new day", new_post_path, class: "nav-link text-primary" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Dodaj", new_post_path, class: "nav-link text-primary" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Profile", posts_path, class: "nav-link text-primary" %>
+            <%= link_to "Profile", edit_user_registration_path, class: "nav-link text-primary" %>
           </li>
           <li class="nav-item">
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link text-primary" %>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search by title" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
     </nav>
 
     <div class="container">
-        <h1 class="text-center custom-tittle">Dodaj objavo</h1>
+        <h3 class="text-center custom-tittle">Anything interesting happened today?</h3>
 
         <%= render "form", post: @post %>
 

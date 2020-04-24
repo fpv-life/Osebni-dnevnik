@@ -3,11 +3,11 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .extra{
-    height: 100vh;
+    height: auto;
     background-color: white;
     padding: 0 !important;
 }
-body{
+html{
     background-color: #bbe1fa !important;
 }
 .btn-outline-success{
@@ -24,17 +24,48 @@ body{
     border-radius: 15px !important;
     background-color:  white !important;
 }
+.custom-body{
+    padding: 0 !important;
+    background-color: white;
+}
 .no-display{
     display: none;
-}
-.custom-textarea{
-    resize: none;
 }
 .custom-tittle{
     margin-top: 30px !important;
     color: #007bff !important;
+    background-color: #e3f2fd;
+    border-radius: 30px;
+    padding: 10px;
 }
-.custom-button{
-    margin-left: 50%;
-    margin-right: 50%;
+.custom-textbox{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.custom-container{
+    padding: 0 !important;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    width: auto !important;
+    border: #e3f2fd 3px solid;
+    margin-bottom: 20px;
+}
+.custom-background{
+    background-color: #bbe1fa !important;
+}
+.custom-container:first-of-type{
+    margin-top: 30px;
+}
+.custom-header{
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px #e3f2fd solid;
+}
+.custom-footer{
+    width: 100%;
+    padding: 5px;
+    border-top: 1px #e3f2fd solid;
+}
+.content{
+    padding: 10px;
 }

@@ -11,11 +11,11 @@ gem "rails", "~> 6.0.2", ">= 6.0.2.1"
 gem "pg" #Ading PostGre
 gem "devise" #Adding device
 gem "bootstrap", "~> 4.4.1" #Adding Bootstrap
-gem "jquery-rails"
 gem "htmlbeautifier"
 gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
 gem "rufo"
+gem "activerecord-session_store"
 
 # Use Puma as the app server
 gem "puma", "~> 4.1"
@@ -33,7 +33,7 @@ gem "jbuilder", "~> 2.7"
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem "image_processing", "~> 1.2"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false

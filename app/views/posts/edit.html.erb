@@ -1,6 +1,54 @@
-<h1>Editing Post</h1>
-
-<%= render 'form', post: @post %>
-
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<script>
+  if (window.location.hash === "#_=_"){
+    history.replaceState
+      ? history.replaceState(null, null, window.location.href.split("#")[0])
+      : window.location.hash = "";
+  }
+</script>
+<% if user_signed_in? %>
+  <div class="container extra">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+      <%= link_to "Journal", posts_path, class: "navbar-brand text-primary" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Home", posts_path, class: "nav-link text-primary" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Add a new day", new_post_path, class: "nav-link text-primary" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Profile", edit_user_registration_path, class: "nav-link text-primary" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link text-primary" %>
+          </li>
+        </ul>
+        <%= form_tag(posts_path, :method => "get", id: "search-form", class: "form-inline my-2 my-lg-0") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search by title", class: "form-control mr-sm-2" %>
+          <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+        <% end %>
+      </div>
+    </nav>
+    <div class="container">
+      <h3 class="text-center custom-tittle">Editing already?</h3>
+      <%= render "form", post: @post %>
+      <%= link_to "Back", posts_path %>
+    </div>
+    <br>
+  </div>
+<% else %>
+  <div class="container d-flex h-100">
+    <div class="row align-self-center w-100">
+      <div class="col-6 mx-auto">
+        <div class="alert alert-primary text-center custom">
+          <p class="lead">Warning, you are not loged in. To procede, please login.</p>
+          <%= link_to "Login / Register", new_user_session_path, class: "align-self-center text-center btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

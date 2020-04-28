@@ -16,6 +16,7 @@ gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
 gem "rufo"
 gem "activerecord-session_store"
+gem "aws-sdk-s3"
 
 # Use Puma as the app server
 gem "puma", "~> 4.1"

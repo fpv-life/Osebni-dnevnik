@@ -1,7 +1,5 @@
 # Personal journal
 
-The login page
-![alt text](https://github.com/fpv-life/Twitter-With-Ruby/blob/master/app/assets/images/twitter-ruby.PNG)
 This website is part of a school project.
 
 On the site, you can:
